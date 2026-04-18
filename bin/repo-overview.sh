@@ -7,7 +7,7 @@ Usage:
   repo-overview.sh [root-dir]
 
 Default root-dir:
-  /home/luca/projects/openclaw
+  current directory
 EOF
 }
 
@@ -16,7 +16,7 @@ if [[ ${1:-} == "--help" ]]; then
   exit 0
 fi
 
-root_dir="${1:-/home/luca/projects/openclaw}"
+root_dir="${1:-.}"
 
 if [[ ! -d "$root_dir" ]]; then
   echo "Root directory not found: $root_dir" >&2

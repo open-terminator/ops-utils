@@ -7,7 +7,7 @@ Usage:
   new-repo-from-template.sh <template> <target-dir> <project-name>
 
 Example:
-  new-repo-from-template.sh generic /home/luca/projects/openclaw/demo demo
+  new-repo-from-template.sh generic ./demo demo
 EOF
 }
 
@@ -19,11 +19,14 @@ fi
 template="$1"
 target_dir="$2"
 project_name="$3"
-factory_root="/home/luca/projects/openclaw/repo-factory/templates"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+default_factory_root="$(cd "$script_dir/../../repo-factory/templates" 2>/dev/null && pwd || true)"
+factory_root="${REPO_FACTORY_TEMPLATES_DIR:-$default_factory_root}"
 source_dir="$factory_root/$template"
 
-if [[ ! -d "$source_dir" ]]; then
+if [[ -z "$factory_root" || ! -d "$source_dir" ]]; then
   echo "Template not found: $template" >&2
+  echo "Set REPO_FACTORY_TEMPLATES_DIR if repo-factory is not located next to ops-utils." >&2
   exit 1
 fi
 

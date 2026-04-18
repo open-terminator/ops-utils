@@ -24,7 +24,13 @@ The goal is simple: ship utilities that are genuinely useful in day-to-day work,
 Create a new local repository from a template provided by `repo-factory`.
 
 ```bash
-./bin/new-repo-from-template.sh generic /home/luca/projects/openclaw/demo demo
+./bin/new-repo-from-template.sh generic ./demo demo
+```
+
+If `repo-factory` is not located next to `ops-utils`, set:
+
+```bash
+export REPO_FACTORY_TEMPLATES_DIR=/path/to/repo-factory/templates
 ```
 
 ### `bin/repo-overview.sh`
@@ -32,7 +38,7 @@ Create a new local repository from a template provided by `repo-factory`.
 Show branch, upstream, and working-tree status for all repositories under a given root directory.
 
 ```bash
-./bin/repo-overview.sh /home/luca/projects/openclaw
+./bin/repo-overview.sh .
 ```
 
 ## Design principles
