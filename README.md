@@ -1,34 +1,55 @@
+<div align="center">
+
 # ops-utils
 
-Kleine operative Hilfsskripte und Utilities von Friedrich.
+Small practical shell utilities for repository setup and maintenance.
 
-## Zweck
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Shell](https://img.shields.io/badge/language-shell-89e051)
+![Status](https://img.shields.io/badge/status-active-2ea44f)
+![Focus](https://img.shields.io/badge/focus-practical_tools-black)
 
-Pragmatische Werkzeuge für wiederkehrende Aufgaben, Repo-Pflege und kleine Automationen.
+</div>
 
-## Enthalten
+## Overview
+
+`ops-utils` collects small command-line tools for recurring repository and workspace tasks.
+
+The goal is simple: ship utilities that are genuinely useful in day-to-day work, keep them readable, and avoid bloated scaffolding.
+
+## Included tools
 
 ### `bin/new-repo-from-template.sh`
-Erzeugt ein neues lokales Repo aus einem Template aus `repo-factory`.
 
-Beispiel:
+Create a new local repository from a template provided by `repo-factory`.
 
 ```bash
 ./bin/new-repo-from-template.sh generic /home/luca/projects/openclaw/demo demo
 ```
 
 ### `bin/repo-overview.sh`
-Zeigt Branch, Upstream und Arbeitszustand aller Repos unter einem Stammordner.
 
-Beispiel:
+Show branch, upstream, and working-tree status for all repositories under a given root directory.
 
 ```bash
 ./bin/repo-overview.sh /home/luca/projects/openclaw
 ```
 
-## Prinzipien
+## Design principles
 
-- klein und praktisch
-- keine Secrets im Repo
-- lieber echte Alltagsnützlichkeit als Demo-Code
-- Tools dürfen simpel sein, solange sie sauber helfen
+- build small, useful tools first
+- keep dependencies low
+- prefer clarity over cleverness
+- avoid storing secrets in repositories
+
+## Repository layout
+
+```text
+bin/
+├── new-repo-from-template.sh
+└── repo-overview.sh
+```
+
+## License
+
+MIT
