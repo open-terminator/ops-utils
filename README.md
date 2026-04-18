@@ -41,6 +41,14 @@ Show branch, upstream, and working-tree status for all repositories under a give
 ./bin/repo-overview.sh .
 ```
 
+### `bin/repo-unpushed.sh`
+
+List local commits that exist in child repositories but have not been pushed to their upstream branch yet.
+
+```bash
+./bin/repo-unpushed.sh .
+```
+
 ## Design principles
 
 - build small, useful tools first
@@ -53,7 +61,8 @@ Show branch, upstream, and working-tree status for all repositories under a give
 ```text
 bin/
 ├── new-repo-from-template.sh
-└── repo-overview.sh
+├── repo-overview.sh
+└── repo-unpushed.sh
 ```
 
 ## License
