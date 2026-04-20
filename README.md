@@ -17,6 +17,12 @@ Small practical shell utilities for repository setup and maintenance.
 
 The goal is simple: ship utilities that are genuinely useful in day-to-day work, keep them readable, and avoid bloated scaffolding.
 
+The repository is intentionally small:
+
+- `bin/` contains the executable shell utilities
+- `README.md` documents usage and layout
+- `LICENSE` keeps redistribution straightforward
+
 ## Included tools
 
 ### `bin/new-repo-from-template.sh`
@@ -66,6 +72,14 @@ List child repositories that do not have a given remote configured.
 ./bin/repo-missing-remote.sh . origin
 ```
 
+### `bin/repo-remotes.sh`
+
+List child repositories together with each configured remote and its URL.
+
+```bash
+./bin/repo-remotes.sh .
+```
+
 ## Design principles
 
 - build small, useful tools first
@@ -81,6 +95,7 @@ bin/
 ├── repo-missing-remote.sh
 ├── repo-missing-upstream.sh
 ├── repo-overview.sh
+├── repo-remotes.sh
 └── repo-unpushed.sh
 ```
 
