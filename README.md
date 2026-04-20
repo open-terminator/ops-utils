@@ -72,6 +72,15 @@ List child repositories that do not have a given remote configured.
 ./bin/repo-missing-remote.sh . origin
 ```
 
+### `bin/repo-missing-file.sh`
+
+List child repositories that do not contain a given relative file path.
+
+```bash
+./bin/repo-missing-file.sh .
+./bin/repo-missing-file.sh . docs/adr/README.md
+```
+
 ### `bin/repo-remotes.sh`
 
 List child repositories together with each configured remote and its URL.
@@ -85,6 +94,7 @@ List child repositories together with each configured remote and its URL.
 - build small, useful tools first
 - keep dependencies low
 - prefer clarity over cleverness
+- keep scripts public-repo clean
 - avoid storing secrets in repositories
 
 ## Repository layout
@@ -92,12 +102,15 @@ List child repositories together with each configured remote and its URL.
 ```text
 bin/
 ├── new-repo-from-template.sh
+├── repo-missing-file.sh
 ├── repo-missing-remote.sh
 ├── repo-missing-upstream.sh
 ├── repo-overview.sh
 ├── repo-remotes.sh
 └── repo-unpushed.sh
 ```
+
+Each tool in `bin/` is a standalone shell script with no external runtime dependencies beyond Git where repository inspection is required.
 
 ## License
 
