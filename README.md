@@ -49,6 +49,14 @@ List local commits that exist in child repositories but have not been pushed to 
 ./bin/repo-unpushed.sh .
 ```
 
+### `bin/repo-missing-upstream.sh`
+
+List child repositories that do not have an upstream branch configured yet.
+
+```bash
+./bin/repo-missing-upstream.sh .
+```
+
 ## Design principles
 
 - build small, useful tools first
@@ -61,6 +69,7 @@ List local commits that exist in child repositories but have not been pushed to 
 ```text
 bin/
 ├── new-repo-from-template.sh
+├── repo-missing-upstream.sh
 ├── repo-overview.sh
 └── repo-unpushed.sh
 ```
