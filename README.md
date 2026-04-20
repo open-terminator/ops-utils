@@ -57,6 +57,15 @@ List child repositories that do not have an upstream branch configured yet.
 ./bin/repo-missing-upstream.sh .
 ```
 
+### `bin/repo-missing-remote.sh`
+
+List child repositories that do not have a given remote configured.
+
+```bash
+./bin/repo-missing-remote.sh .
+./bin/repo-missing-remote.sh . origin
+```
+
 ## Design principles
 
 - build small, useful tools first
@@ -69,6 +78,7 @@ List child repositories that do not have an upstream branch configured yet.
 ```text
 bin/
 ├── new-repo-from-template.sh
+├── repo-missing-remote.sh
 ├── repo-missing-upstream.sh
 ├── repo-overview.sh
 └── repo-unpushed.sh
